@@ -1,0 +1,9 @@
+.imgCarrinho {
+    height: 100px;
+    width: auto;
+}
+
+.carrinhoValor {
+    font-weight: bold;
+    font-size: 18px;
+}

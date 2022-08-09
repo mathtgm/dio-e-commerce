@@ -8,7 +8,7 @@
         <h5 class="product-card-title">{{produto.produto.slice(0, 28)}}</h5>
         <hr>
         <p class="product-card-text">R$ {{produto.valor}}</p>
-        <button type="button" class="btn btn-primary productButton"><i class="bi bi-cart4"></i> Adicionar ao
+        <button type="button" class="btn btn-primary productButton" (click)="adicionarCarrinho(produto)"><i class="bi bi-cart4"></i> Adicionar ao
           carrinho</button>
       </div>
     </div>

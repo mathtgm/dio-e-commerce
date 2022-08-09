@@ -1,0 +1,33 @@
+    <div class="container shadow p-3 mb-5">
+      <h2>Lista de produtos</h2>
+      <hr>
+      <div class="container">
+
+        <div *ngFor="let produto of carrinho" class="border-bottom w-100 my-3 py-3 shadow-sm d-lg-flex flex-lg-nowrap">
+          <div class="col me-4">
+            <img [src]="produto.mercadoria.imagem" [alt]="produto.mercadoria" class="imgCarrinho">
+          </div>
+          <div class="col-11">
+            <p>{{produto.mercadoria.produto}}</p>
+            <p>Unidade(s): {{produto.quantidade}}</p>
+            <p>Valor und.: {{produto.mercadoria.valor | currency:'R$'}}</p>
+            <p class="carrinhoValor">Valor total: <span
+                class="text-primary">{{produto.mercadoria.valor * produto.quantidade | currency:'R$' }}</span></p>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-warning" (click)="removerUmProduto(produto.mercadoria.id)">Remover -1</button>
+              <button type="button" class="btn btn-danger" (click)="removerProduto(produto.mercadoria.id)">Remover do
+                carrinho</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <hr>
+      <h2>Total do pedido <span class="text-success">{{totalCarrinho() | currency:'R$'}}</span></h2>
+      <div class="btn-group">
+        <button type="button" class="btn btn-success"><i class="bi bi-bag-check-fill"></i> Finalizar compra</button>
+        <button type="button" class="btn btn-light" routerLink=""><i class="bi bi-box-arrow-left"></i> Continuar comprando</button>
+      </div>
+
+    </div>
