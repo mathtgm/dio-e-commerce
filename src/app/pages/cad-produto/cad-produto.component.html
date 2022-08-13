@@ -1,0 +1,54 @@
+<div class="container bg-light p-5 shadow-sm mb-5">
+  <h2 class="mb-3">Cadastro de produto</h2>
+  <div *ngIf="formMsg['tipo'] > 0" ngClass="{{formMsg['tipo'] === 1 ?  'alert-success' : 'alert-danger'}}" class="alert">{{formMsg.msg}}</div>
+  <form [formGroup]=" produtoForm">
+    <input type="text" formControlName="id" hidden>
+    <div class="row">
+      <div class="col-9">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Produto</span>
+          <input type="text" formControlName="produto" class="form-control">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">R$ </span>
+          <input type="number" formControlName="valor" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Descrição</span>
+          <textarea formControlName="descricao" class="form-control"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Link da imagem</span>
+          <input type="text" formControlName="imagem" class="form-control">
+        </div>
+      </div>
+      <div class="col">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Categoria</span>
+          <select class="form-select" formControlName="categoria">
+            <option selected>:: Selecione a categoria ::</option>
+            <option value="Movel">Móvel</option>
+            <option value="Eletrodomestico">Eletrodoméstico</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="btn-group">
+      <div class="btn btn-success" (click)="actionButton()"><i class="bi bi-pencil-square"></i>{{idProduto > 0 ? " Alterar produto" : " Cadastrar produto"}}</div>
+      <div *ngIf="idProduto > 0" class="btn btn-danger" (click)="excluirProduto()"><i class="bi bi-trash3-fill"></i> Excluir produto</div>
+      <div class="btn btn-warning" [routerLink]="['']">Voltar</div>
+    </div>
+
+  </form>
+
+</div>

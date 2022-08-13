@@ -9,6 +9,8 @@ import { FooterComponent } from './components/shared/footer/footer.component';
 import { StoreComponent } from './pages/store/store.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
+import { CadProdutoComponent } from './pages/cad-produto/cad-produto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,15 @@ import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
     NavbarComponent,
     FooterComponent,
     StoreComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    CadProdutoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt' }],
   bootstrap: [AppComponent]

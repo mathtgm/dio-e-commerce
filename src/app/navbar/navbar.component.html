@@ -1,43 +1,44 @@
 <nav class="navbar navbar-expand-lg bg-light mb-5">
-    <div class="container-fluid">
-      <a class="navbar-brand" href=""><img class="brand-img" src="../../assets/images/brand.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href=""><i class="bi bi-house-door"></i> Página inicial</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Produtos</a>
-          </li>
-        </ul>
-        <div class="container d-flex justify-content-end">
-          <div class="row">
-              <div class="col">
-                  <a class="nav-link btn btn-success text-white p-2 mx-2" href="/carrinho">
-                      <i class="bi bi-cart4"></i> Carrinho ({{qtdProdutoCarrinho}})
-                  </a>
-              </div>
-            </div>
-            
-            <form role="search">
-              <div class="row">
-                  <div class="col-8">
-                      <input class="form-control input p-2" type="search" placeholder="O que você procura?" aria-label="Procurar">
-                  </div>
-                <div class="col p-0">
-                  <button class="btn btn-outline-success  p-2" type="submit">
-                      <i class="bi bi-search"></i> Pesquisar
-                  </button>
-                  </div>
-              </div>
-            </form>   
+  <div class="container-fluid">
+    <a class="navbar-brand" href=""><img class="brand-img" src="../../assets/images/brand.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><i
+              class="bi bi-house-door"></i> Página inicial</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cadastro/produto" routerLinkActive="active">Cadastro de Produtos</a>
+        </li>
+      </ul>
+      <div class="container d-flex justify-content-end">
+        <div class="row">
+          <div class="col">
+            <a class="nav-link btn btn-success text-white p-2 mx-2" href="/carrinho">
+              <i class="bi bi-cart4"></i> Carrinho ({{qtdProdutoCarrinho}})
+            </a>
+          </div>
         </div>
-        
+
+        <form role="search">
+          <div class="row">
+            <div class="col-8">
+              <input class="form-control input p-2" type="search" placeholder="O que você procura?"
+                aria-label="Procurar">
+            </div>
+            <div class="col p-0">
+              <button class="btn btn-outline-success  p-2" type="submit">
+                <i class="bi bi-search"></i> Pesquisar
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
+
     </div>
-  </nav>
-  
+  </div>
+</nav>
