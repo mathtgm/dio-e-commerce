@@ -1,5 +1,5 @@
 <div class="container bg-light p-5 shadow-sm mb-5">
-  <h2 class="mb-3">Cadastro de produto</h2>
+  <h2 class="mb-3">{{idProduto > 0 ? 'Alterar produto' : 'Cadastrar produto'}}</h2>
   <div *ngIf="formMsg['tipo'] > 0" ngClass="{{formMsg['tipo'] === 1 ?  'alert-success' : 'alert-danger'}}" class="alert">{{formMsg.msg}}</div>
   <form [formGroup]=" produtoForm">
     <input type="text" formControlName="id" hidden>

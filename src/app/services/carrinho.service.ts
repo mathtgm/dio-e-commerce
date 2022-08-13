@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../model/Product';
 import { ProductCarrinho } from '../model/ProductCarrinho';
+import { ProductsService } from './products.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class CarrinhoService {
 
   carrinho: ProductCarrinho[] = [];
 
-  constructor() { }
+  constructor(private produtoService: ProductsService) { }
 
   // Adiciona um produto no carrinho
   adicionarProduto(produto: Product): void {
@@ -75,5 +76,10 @@ export class CarrinhoService {
   // Retorna a quantidade de produtos no carrinho
   getQuantidadeCarrinho(): number {
     return this.getCarrinho.length;
+  }
+
+  // Finalizacao da compra
+  fecharCompra(): void {
+    localStorage.setItem('carrinho', '');
   }
 }
