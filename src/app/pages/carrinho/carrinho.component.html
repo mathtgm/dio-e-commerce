@@ -26,7 +26,7 @@
       <hr>
       <h2>Total do pedido <span class="text-success">{{totalCarrinho() | currency:'R$'}}</span></h2>
       <div class="btn-group">
-        <button type="button" class="btn btn-success"><i class="bi bi-bag-check-fill"></i> Finalizar compra</button>
+        <button type="button" class="btn btn-success" (click)="finalizarCompra()" ><i class="bi bi-bag-check-fill"></i> Finalizar compra</button>
         <button type="button" class="btn btn-light" routerLink=""><i class="bi bi-box-arrow-left"></i> Continuar comprando</button>
       </div>
 

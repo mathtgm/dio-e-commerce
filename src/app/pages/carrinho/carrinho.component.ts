@@ -38,4 +38,8 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.removerProdutoCarrinho(idProduto);
   }
 
+  finalizarCompra(): void {
+    this.carrinhoService.fecharCompra();
+  }
+
 }
